@@ -39,9 +39,9 @@ classdef SmokeTests < matlab.unittest.TestCase
             Filename = string(Scripts);
             switch (Filename)
                 case "FilteringIntro.mlx"
-                    SimpleSmokeTest(testCase,"FilteringIntroTest.mlx")
+                    AudioSmokeTest(testCase,"FilteringIntroTest.mlx")
                 case "AnalogToDigitalConversion.mlx"
-                    SimpleSmokeTest(testCase,"AnalogToDigitalConversionTest.mlx")
+                    AudioSmokeTest(testCase,"AnalogToDigitalConversionTest.mlx")
                 case "FilterDesign.mlx"
                     FilterDesignSmokeTest(testCase,Filename)
                 otherwise
@@ -87,6 +87,23 @@ classdef SmokeTests < matlab.unittest.TestCase
             disp(">> Running " + Filename);
             try
                 run(fullfile("Scripts",Filename));
+            catch ME
+                switch ME.identifier
+                    case 'MATLAB:minrhs'
+                    otherwise
+                        testCase.verifyTrue(false,ME.message);
+                end
+            end
+        end
+
+        function AudioSmokeTest(testCase,Filename)
+
+            % Run the Smoke test
+            RootFolder = currentProject().RootFolder;
+            cd(RootFolder)
+            disp(">> Running " + Filename);
+            try
+                run(fullfile("Utilities",Filename));
             catch ME
                 switch ME.identifier
                     case 'MATLAB:minrhs'
