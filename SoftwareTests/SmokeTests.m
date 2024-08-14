@@ -38,6 +38,10 @@ classdef SmokeTests < matlab.unittest.TestCase
         function SmokeRun(testCase,Scripts)
             Filename = string(Scripts);
             switch (Filename)
+                case "FilteringIntro.mlx"
+                    SimpleSmokeTest(testCase,"FilteringIntroTest.mlx")
+                case "AnalogToDigitalConversion.mlx"
+                    SimpleSmokeTest(testCase,"AnalogToDigitalConversionTest.mlx")
                 case "FilterDesign.mlx"
                     FilterDesignSmokeTest(testCase,Filename)
                 otherwise
