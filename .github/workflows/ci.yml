@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         MATLABVersion: [R2023b,R2024a]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       # Checks-out your repository
       - uses: actions/checkout@v3
