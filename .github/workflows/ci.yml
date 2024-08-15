@@ -24,7 +24,7 @@ jobs:
         if: ${{ always() }}
         run: |
           sudo apt-get install xvfb
-          sudo apt install gcc g++
+          sudo export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH
           sudo apt install gstreamer1.0-plugins-*
           Xvfb :99 &
           echo "DISPLAY=:99" >> $GITHUB_ENV
