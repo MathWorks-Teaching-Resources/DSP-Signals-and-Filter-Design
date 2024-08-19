@@ -4,7 +4,7 @@
 # <span style="color:rgb(213,80,0)">Digital Signal Processing: Signals and Filter Design</span>
 <a name="H_053613DF"></a>
 
-[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Introduction-To-Digital-Signal-Processing&project=DSP.prj&file=README.mlx)
+[![View on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://uk.mathworks.com/matlabcentral/fileexchange/171574-introduction-to-digital-signal-processing) or [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Introduction-To-Digital-Signal-Processing&project=DSP.prj&file=README.mlx)
 
 **Curriculum Module**
 
@@ -58,7 +58,7 @@ MATLAB® is used throughout. Tools from Signal Processing Toolbox™ are used fr
 
 # Scripts
 
- *If you are viewing this in a version of MATLAB prior to R2023b, you can view the learning outcomes for each script* [*here*](https://www.mathworks.com/matlabcentral/fileexchange/REPO_NAME)
+ *If you are viewing this in a version of MATLAB prior to R2023b, you can view the learning outcomes for each script* [*here*](https://uk.mathworks.com/matlabcentral/fileexchange/171574-introduction-to-digital-signal-processing)
 
 ## [**AnalogToDigitalConversion.mlx**](AnalogToDigitalConversion.mlx)
 | <img src="Images/image_3.png" width="231" alt="image_3.png"> <br>  | **In this script, students will...** <br> <br>-  Learn the difference between analog and digital signals <br> <br>-  Explore examples of sampling signals at different sample rates <br> <br>-  Learn about Nyquist Theorem and why it is important <br> <br>-  Work through an example illustrating the effects of sampling and quantization on a short recording of a jazz song <br>   |
