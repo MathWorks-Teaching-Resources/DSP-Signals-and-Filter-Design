@@ -5,48 +5,77 @@ classdef SmokeTests < matlab.unittest.TestCase
     end
 
     properties (TestParameter)
-        Scripts;
+        File;
     end
 
     methods (TestParameterDefinition,Static)
 
-        function Scripts = GetScriptName(Project)
+        function File = RetrieveFile(Project) %#ok<INUSD>
+            % Retrieve the files to test
             RootFolder = currentProject().RootFolder;
-            Scripts = dir(fullfile(RootFolder,"Scripts","*.mlx"));
-            Scripts = {Scripts.name};
+            File = dir(fullfile(RootFolder,"Scripts","*.mlx"));
+            File = {File.name}; 
         end
 
     end
 
     methods (TestClassSetup)
 
-        function SetUpSmokeTest(testCase,Project)
+        function SetUpSmokeTest(testCase,Project) %#ok<INUSD>
             try
-               currentProject;  
+               currentProject;
+               % Close the StartUp app if still open
+               delete(findall(groot,'Name','StartUp App'))
             catch ME
                 warning("Project is not loaded.")
             end
         end
 
-
     end
-
-
     
     methods(Test)
 
-        function SmokeRun(testCase,Scripts)
-            Filename = string(Scripts);
-            switch (Filename)
-                case "FilteringIntro.mlx"
-                    AudioSmokeTest(testCase,"FilteringIntroTest.mlx")
-                case "AnalogToDigitalConversion.mlx"
-                    AudioSmokeTest(testCase,"AnalogToDigitalConversionTest.mlx")
-                case "FilterDesign.mlx"
-                    FilterDesignSmokeTest(testCase,Filename)
-                otherwise
-                    SimpleSmokeTest(testCase,Filename)
+        function SmokeRun(testCase,File)
+
+            % Check file system
+            RootFolder = currentProject().RootFolder;
+            cd(RootFolder)
+            Filename = string(File);
+
+            % Initialize test:
+            %   - Pre-populate workspace
+            %   - Overload functions
+            InitFile = RetrieveInitFile(testCase,Filename);
+            run(InitFile);
+
+            % Run SmokeTest
+            disp(">> Running " + Filename);
+            try
+                run(fullfile("Scripts",Filename));
+            catch ME %#ok<*UNRCH>
+                if ~any(strcmp(ME.identifier,KnownIssuesID))
+                    testCase.verifyTrue(false,ME.message);
+                end
             end
+
+            % Log every figure created during run
+            Figures = findall(groot,'Type','figure');
+            Figures = flipud(Figures);
+            if ~isempty(Figures)
+                for f = 1:size(Figures,1)
+                    if ~isempty(Figures(f).Number)
+                        FigDiag = matlab.unittest.diagnostics.FigureDiagnostic(Figures(f),'Formats','png');
+                        log(testCase,1,FigDiag);
+                    end
+                end
+            end
+
+            % Close all figures and Simulink models
+            close all force
+            if any(matlab.addons.installedAddons().Name == "Simulink")
+                bdclose all
+            end
+
         end
             
     end
@@ -54,74 +83,22 @@ classdef SmokeTests < matlab.unittest.TestCase
 
     methods (Access = private)
 
-        function SimpleSmokeTest(testCase,Filename)
-
-            % Run the Smoke test
-            RootFolder = currentProject().RootFolder;
-            cd(RootFolder)
-            disp(">> Running " + Filename);
-            try
-                run(fullfile("Scripts",Filename));
-            catch ME
-                testCase.verifyTrue(false,ME.message);
+        function y = RetrieveInitFile(testCase,Filename)
+            InitFile = "Init"+replace(Filename,".mlx",".m");
+            InitFilePath = fullfile(currentProject().RootFolder,"SoftwareTests","InitFiles",InitFile);
+            if ~isfolder(fullfile(currentProject().RootFolder,"SoftwareTests/InitFiles"))
+                mkdir(fullfile(currentProject().RootFolder,"SoftwareTests/InitFiles"))
             end
-            
-            % Log the opened figures to the test reports
-            Figures = findall(groot,'Type','figure');
-            Figures = flipud(Figures);
-            if ~isempty(Figures)
-                for f = 1:size(Figures,1)
-                    FigDiag = matlab.unittest.diagnostics.FigureDiagnostic(Figures(f));
-                    % log(testCase,1,FigDiag);
-                end
+            if ~isfile(InitFilePath)
+                writelines("%  Initialization script for "+Filename,InitFilePath)
+                writelines("% ---- Known Issues     -----",InitFilePath,'WriteMode','append');
+                writelines("KnownIssuesID = "+char(34)+char(34)+";",InitFilePath,'WriteMode','append');
+                writelines("% ---- Pre-run commands -----",InitFilePath,'WriteMode','append');
+                writelines(" ",InitFilePath,'WriteMode','append');
             end
-            close all
-
+            y = InitFilePath;
         end
 
-        function FilterDesignSmokeTest(testCase,Filename)
-
-            % Run the Smoke test
-            RootFolder = currentProject().RootFolder;
-            cd(RootFolder)
-            disp(">> Running " + Filename);
-            try
-                run(fullfile("Scripts",Filename));
-            catch ME
-                switch ME.identifier
-                    case 'MATLAB:minrhs'
-                    otherwise
-                        testCase.verifyTrue(false,ME.message);
-                end
-            end
-        end
-
-        function AudioSmokeTest(testCase,Filename)
-
-            % Run the Smoke test
-            RootFolder = currentProject().RootFolder;
-            cd(RootFolder)
-            disp(">> Running " + Filename);
-            try
-                run(fullfile("Utilities",Filename));
-            catch ME
-                switch ME.identifier
-                    case 'MATLAB:minrhs'
-                    otherwise
-                        testCase.verifyTrue(false,ME.message);
-                end
-            end
-        end
-        
     end
-
-    methods (TestClassTeardown)
-
-        function closeAllFigure(testCase)
-            close all force  % Close figure windows
-            bdclose all      % Close Simulink models
-        end
-
-    end % methods (TestClassTeardown)
 
 end
