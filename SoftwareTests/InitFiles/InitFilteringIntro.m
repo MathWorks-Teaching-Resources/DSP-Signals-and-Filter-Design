@@ -2,11 +2,15 @@
 % ---- Known Issues     -----
 KnownIssuesID = "MATLAB:minrhs";
 % ---- Pre-run commands -----
-audioplayer = @(x) disp("Create audio player");
 play = @(x) disp("Playing audio");
 stop = @(x) disp("Stop audio player");
-audioread = @(x) NewAudioRead();
+audioread = @(x) NewAudioRead(x);
+audioplayer = @(x,y) NewAudioPlayer(x,y);
 function varargout=NewAudioRead(varargin)
 load(fullfile(currentProject().RootFolder,"SoftwareTests\InitFiles\InitFilteringIntro.mat"));
 varargout={Signal,SamplingFrequency};
+end
+function varargout=NewAudioPlayer(varargin)
+disp("Create audio player")
+varargout={1};
 end
