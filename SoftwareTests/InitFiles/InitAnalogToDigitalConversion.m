@@ -7,7 +7,7 @@ stop = @(x) disp("Stop audio player");
 audioread = @(x) NewAudioRead(x);
 audioplayer = @(x,y) NewAudioPlayer(x,y);
 function varargout=NewAudioRead(varargin)
-load(fullfile(currentProject().RootFolder,"SoftwareTests\InitFiles\InitAnalogToDigitalConversion.mat"));
+load(fullfile(currentProject().RootFolder,"SoftwareTests","InitFiles","InitAnalogToDigitalConversion.mat"));
 varargout={JazzSignal,JazzSamplingFreq};
 end
 function varargout=NewAudioPlayer(varargin)

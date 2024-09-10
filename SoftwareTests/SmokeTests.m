@@ -54,8 +54,7 @@ classdef SmokeTests < matlab.unittest.TestCase
                 run(fullfile("Scripts",Filename));
             catch ME %#ok<*UNRCH>
                 if ~any(strcmp(ME.identifier,KnownIssuesID))
-                    disp("Error >>> Line "+ME.stack(1).line)
-                    testCase.verifyTrue(false,ME.message);
+                    rethrow(ME)
                 end
             end
 
