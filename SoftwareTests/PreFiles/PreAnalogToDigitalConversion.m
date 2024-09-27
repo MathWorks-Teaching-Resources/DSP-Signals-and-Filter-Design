@@ -1,4 +1,4 @@
-%  Initialization script for FilteringIntro.mlx
+%  Initialization script for AnalogToDigitalConversion.mlx
 % ---- Known Issues     -----
 KnownIssuesID = "MATLAB:minrhs";
 % ---- Pre-run commands -----
@@ -7,8 +7,8 @@ stop = @(x) disp("Stop audio player");
 audioread = @(x) NewAudioRead(x);
 audioplayer = @(x,y) NewAudioPlayer(x,y);
 function varargout=NewAudioRead(varargin)
-load(fullfile(currentProject().RootFolder,"SoftwareTests","InitFiles","InitFilteringIntro.mat"));
-varargout={Signal,SamplingFrequency};
+load(fullfile(currentProject().RootFolder,"SoftwareTests","PreFiles","PreAnalogToDigitalConversion.mat"));
+varargout={JazzSignal,JazzSamplingFreq};
 end
 function varargout=NewAudioPlayer(varargin)
 disp("Create audio player")

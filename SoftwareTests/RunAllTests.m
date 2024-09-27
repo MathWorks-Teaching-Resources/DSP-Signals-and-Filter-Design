@@ -26,7 +26,6 @@ end
 % Create the test suite with SmokeTest and Function test if they exist
 Suite = testsuite("SmokeTests");
 Suite = [Suite testsuite("FunctionTests")];
-% Suite = [Suite testsuite("SolnSmokeTests")];
 
 % Run the test suite
 Results = Runner.run(Suite);
