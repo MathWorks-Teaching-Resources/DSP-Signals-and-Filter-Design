@@ -122,9 +122,7 @@ classdef SmokeTests < matlab.unittest.TestCase
             try
                 run(fullfile(testCase.RootFolder,"InstructorResources","Solutions",SolutionFile));
             catch ME
-                if ~any(strcmp(ME.identifier,KnownIssuesID))
-                    rethrow(ME)
-                end
+                rethrow(ME)
             end
 
             % Post-test:

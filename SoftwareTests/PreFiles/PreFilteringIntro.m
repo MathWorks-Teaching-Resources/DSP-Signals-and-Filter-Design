@@ -1,4 +1,5 @@
 %  Initialization script for FilteringIntro.mlx
+OnSolution = true;
 % ---- Known Issues     -----
 KnownIssuesID = "MATLAB:minrhs";
 % ---- Pre-run commands -----

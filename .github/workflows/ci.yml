@@ -38,7 +38,7 @@ jobs:
       - name: Run SmokeTests
         uses: matlab-actions/run-command@v2
         with:
-          command: openProject(pwd); RunAllTests; 
+          command: openProject(pwd); RunAllTests(true); 
 
       # Upload the test results as artifact
       - name: Upload TestResults
@@ -47,6 +47,7 @@ jobs:
           name: TestResults_${{ matrix.MATLABVersion }}
           path: ./SoftwareTests/TestResults_${{ matrix.MATLABVersion }}.txt
           overwrite: true
+
 
   badge:
     if: ${{ always() }}

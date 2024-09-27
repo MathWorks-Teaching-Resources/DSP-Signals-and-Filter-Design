@@ -1,4 +1,5 @@
 %  Initialization script for AnalogToDigitalConversion.mlx
+OnSolution = true;
 % ---- Known Issues     -----
 KnownIssuesID = "MATLAB:minrhs";
 % ---- Pre-run commands -----
