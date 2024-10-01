@@ -37,6 +37,7 @@ jobs:
         uses: matlab-actions/setup-matlab@v2
         with:
           release: ${{ matrix.MATLABVersion }}
+          products: Simulink Signal_Processing_Toolbox Symbolic_Math_Toolbox
 
       # Run all the tests
       - name: Run SmokeTests
