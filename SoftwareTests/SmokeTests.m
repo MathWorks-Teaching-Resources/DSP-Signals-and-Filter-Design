@@ -97,9 +97,9 @@ classdef SmokeTests < matlab.unittest.TestCase
 
        function Path = CheckPreFile(testCase,Filename)
             PreFile = "Pre"+replace(Filename,".mlx",".m");
-            PreFilePath = fullfile(currentProject().RootFolder,"SoftwareTests","PreFiles",PreFile);
-            if ~isfolder(fullfile(currentProject().RootFolder,"SoftwareTests/PreFiles"))
-                mkdir(fullfile(currentProject().RootFolder,"SoftwareTests/PreFiles"))
+            PreFilePath = fullfile(testCase.RootFolder,"SoftwareTests","PreFiles",PreFile);
+            if ~isfolder(fullfile(testCase.RootFolder,"SoftwareTests/PreFiles"))
+                mkdir(fullfile(testCase.RootFolder,"SoftwareTests/PreFiles"))
             end
             if ~isfile(PreFilePath)
                 writelines("%  Pre-run script for "+Filename,PreFilePath)
@@ -113,9 +113,9 @@ classdef SmokeTests < matlab.unittest.TestCase
 
         function Path = CheckPostFile(testCase,Filename)
             PostFile = "Post"+replace(Filename,".mlx",".m");
-            PostFilePath = fullfile(currentProject().RootFolder,"SoftwareTests","PostFiles",PostFile);
-            if ~isfolder(fullfile(currentProject().RootFolder,"SoftwareTests/PostFiles"))
-                mkdir(fullfile(currentProject().RootFolder,"SoftwareTests/PostFiles"))
+            PostFilePath = fullfile(testCase.RootFolder,"SoftwareTests","PostFiles",PostFile);
+            if ~isfolder(fullfile(testCase.RootFolder,"SoftwareTests/PostFiles"))
+                mkdir(fullfile(testCase.RootFolder,"SoftwareTests/PostFiles"))
             end
             if ~isfile(PostFilePath)
                 writelines("%  Post-run script for "+Filename,PostFilePath)

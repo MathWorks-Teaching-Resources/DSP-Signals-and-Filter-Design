@@ -8,8 +8,9 @@ on:
     branches: [ release ]
   workflow_dispatch:
 
+# Add permission to write GitHub pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -38,6 +39,7 @@ jobs:
         with:
           release: ${{ matrix.MATLABVersion }}
           products: Simulink Signal_Processing_Toolbox Symbolic_Math_Toolbox
+
 
       # Run all the tests
       - name: Run SmokeTests
@@ -83,7 +85,8 @@ jobs:
         uses: matlab-actions/run-command@v2
         with:
           command: openProject(pwd); PostSmokeTest;
-
+      
+      # Deploy reports to GitHub pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload pages artifact
