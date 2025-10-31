@@ -51,25 +51,25 @@ Ensure you have all the required products (listed below) installed. If you need 
 MATLAB® is used throughout. Tools from Signal Processing Toolbox™ are used frequently as well.
 
 # Scripts
-## [**AnalogToDigitalConversion.mlx**](AnalogToDigitalConversion.mlx)
+## [**AnalogToDigitalConversion.mlx**](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=Scripts/AnalogToDigitalConversion.mlx)
 |      |      |
 | :-- | :-- |
 | <img src="Images/image_3.png" width="231" alt="image_3.png"> <br>  | **In this script, students will...** <br> $\bullet$ Learn the difference between analog and digital signals <br> $\bullet$ Explore examples of sampling signals at different sample rates <br> $\bullet$ Learn about Nyquist Theorem and why it is important <br> $\bullet$ Work through an example illustrating the effects of sampling and quantization on a short recording of a jazz song <br>   |
 |      |       |
 
-## [**FilteringIntro.mlx**](FilteringIntro.mlx)
+## [**FilteringIntro.mlx**](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=Scripts/FilteringIntro.mlx)
 |      |      |
 | :-- | :-- |
 | <img src="Images/image_4.png" width="231" alt="image_4.png"> <br>  | **In this script, students will...** <br> $\bullet$ Learn about the purpose of filtering <br> $\bullet$ Explore a step\-by\-step example of applying a smoothing filter to real\-world accelerometer data <br> $\bullet$ Learn about four different ways of visualizing signals in different domains <br> $\bullet$ Learn about three different types of frequency\-based filters and apply them to a real\-world recording of birds chirping <br>   |
 |      |       |
 
-## [**FilterDesign.mlx**](FilterDesign.mlx)
+## [**FilterDesign.mlx**](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=Scripts/FilterDesign.mlx)
 |      |      |
 | :-- | :-- |
 | <img src="Images/image_5.png" width="231" alt="image_5.png"> <br>  | **In this script, students will...** <br> $\bullet$ Learn about impulse responses and their importance in designing filters <br> $\bullet$ Learn the difference between FIR and IIR filters and apply them to an audio signal <br> $\bullet$ Explore the importance of group delay and magnitude responses <br> $\bullet$ Use the Design Filter live task to design their own filters <br>   |
 |      |       |
 
-## [**BuildFilteringApp.mlx**](BuildFilteringApp.mlx)
+## [**BuildFilteringApp.mlx**](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=Scripts/BuildFilteringApp.mlx)
 |      |      |
 | :-- | :-- |
 | <img src="Images/image_6.png" width="231" alt="image_6.png"> <br>  | **In this script, students will...** <br> $\bullet$ Work step by step to build a filtering app <br>   |
