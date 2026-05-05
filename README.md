@@ -4,7 +4,7 @@
 
 [![View on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/171574-digital-signal-processing-signals-and-filter-design) or [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=README.mlx)
 
-[![MATLAB Versions Tested](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FMathWorks-Teaching-Resources%2FDSP-Signals-and-Filter-Design%2Frelease%2FImages%2FTestedWith.json)](https://MathWorks-Teaching-Resources.github.io/DSP-Signals-and-Filter-Design)
+[![MATLAB Versions Tested](https://img.shields.io/endpoint?url=https://mathworks-teaching-resources.github.io/introduction-to-digital-signal-processing/TestedWith.json)](https://MathWorks-Teaching-Resources.github.io/introduction-to-digital-signal-processing)
 
 **Curriculum Module**
 
