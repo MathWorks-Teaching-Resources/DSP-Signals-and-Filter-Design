@@ -1,4 +1,4 @@
-%  Initialization script for FilteringIntro.mlx
+%  Initialization script for FilteringIntro.m
 % ---- Known Issues     -----
 KnownIssuesID = "MATLAB:minrhs";
 % ---- Pre-run commands -----
@@ -6,6 +6,8 @@ play = @(x) disp("Playing audio");
 stop = @(x) disp("Stop audio player");
 audioread = @(x) NewAudioRead(x);
 audioplayer = @(x,y) NewAudioPlayer(x,y);
+
+% <matlab:ShareFeedback Share your feedback>
 function varargout=NewAudioRead(varargin)
 load(fullfile(currentProject().RootFolder,"SoftwareTests","PreFiles","PreFilteringIntro.mat"));
 varargout={Signal,SamplingFrequency};

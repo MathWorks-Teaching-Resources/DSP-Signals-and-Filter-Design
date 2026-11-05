@@ -1,14 +1,15 @@
-
 # <span style="color:rgb(213,80,0)">Digital Signal Processing: Signals and Filter Design</span>
 
+This version requires MATLAB R2025a or newer. For MATLAB R2024b or older, download the [legacy MLX version](https://github.com/MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design/releases/tag/mlx).
 
-[![View on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/171574-digital-signal-processing-signals-and-filter-design) or [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=README.mlx)
 
-[![MATLAB Versions Tested](https://img.shields.io/endpoint?url=https://mathworks-teaching-resources.github.io/DSP-Signals-and-Filter-Design/TestedWith.json)](https://mathWorks-teaching-resources.github.io/DSP-Signals-and-Filter-Design)
+[![View on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/171574-digital-signal-processing-signals-and-filter-design) or [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=README.m)
+
+[![MATLAB Versions Tested](https://img.shields.io/endpoint?url=https://mathworks-teaching-resources.github.io/DSP-Signals-and-Filter-Design/TestedWith.json)](https://MathWorks-Teaching-Resources.github.io/DSP-Signals-and-Filter-Design)
 
 **Curriculum Module**
 
-_Created with R2024a. Compatible with R2024a and later releases._
+_Created with R2024a. This version requires R2025a or newer._
 
 # Information
 
@@ -36,11 +37,11 @@ This module assumes very basic knowledge of Fourier analysis and convolution. If
 ### Accessing the Module
 ### **On MATLAB Online:**
 
-Use the [<img src="Images/image_1.png" width="136" alt="image_1.png">](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/Introduction-To-Digital-Signal-Processing&project=DSP.prj) link to download the module. You will be prompted to log in or create a MathWorks® account. The project will be loaded, and you will see an app with several navigation options to get you started.
+Use the [<img src="Images/image_1.png" width="136" alt="image_1.png">](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj) link to download the module. You will be prompted to log in or create a MathWorks® account. The project will be loaded, and you will see an app with several navigation options to get you started.
 
 ### **On Desktop:**
 
-Download or clone this repository. Open MATLAB, navigate to the folder containing these scripts and double\-click on [DSP.prj](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=README.mlx). It will add the appropriate files to your MATLAB path and open an app that asks you where you would like to start. 
+Download or clone this repository. Open MATLAB, navigate to the folder containing these scripts and double\-click on [DSP.prj](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=README.m). It will add the appropriate files to your MATLAB path and open an app that asks you where you would like to start.
 
 
 Ensure you have all the required products (listed below) installed. If you need to include a product, add it using the Add\-On Explorer. To install an add\-on, go to the **Home** tab and select  <img src="Images/image_2.png" width="16" alt="image_2.png"> **Add-Ons** > **Get Add-Ons**. 
@@ -51,25 +52,25 @@ Ensure you have all the required products (listed below) installed. If you need 
 MATLAB® is used throughout. Tools from Signal Processing Toolbox™ are used frequently as well.
 
 # Scripts
-## [**AnalogToDigitalConversion.mlx**](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=Scripts/AnalogToDigitalConversion.mlx)
+## [**AnalogToDigitalConversion.m**](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=Scripts/AnalogToDigitalConversion.m)
 |      |      |
 | :-- | :-- |
 | <img src="Images/image_3.png" width="231" alt="image_3.png"> <br>  | **In this script, students will...** <br> $\bullet$ Learn the difference between analog and digital signals <br> $\bullet$ Explore examples of sampling signals at different sample rates <br> $\bullet$ Learn about Nyquist Theorem and why it is important <br> $\bullet$ Work through an example illustrating the effects of sampling and quantization on a short recording of a jazz song <br>   |
 |      |       |
 
-## [**FilteringIntro.mlx**](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=Scripts/FilteringIntro.mlx)
+## [**FilteringIntro.m**](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=Scripts/FilteringIntro.m)
 |      |      |
 | :-- | :-- |
 | <img src="Images/image_4.png" width="231" alt="image_4.png"> <br>  | **In this script, students will...** <br> $\bullet$ Learn about the purpose of filtering <br> $\bullet$ Explore a step\-by\-step example of applying a smoothing filter to real\-world accelerometer data <br> $\bullet$ Learn about four different ways of visualizing signals in different domains <br> $\bullet$ Learn about three different types of frequency\-based filters and apply them to a real\-world recording of birds chirping <br>   |
 |      |       |
 
-## [**FilterDesign.mlx**](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=Scripts/FilterDesign.mlx)
+## [**FilterDesign.m**](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=Scripts/FilterDesign.m)
 |      |      |
 | :-- | :-- |
 | <img src="Images/image_5.png" width="231" alt="image_5.png"> <br>  | **In this script, students will...** <br> $\bullet$ Learn about impulse responses and their importance in designing filters <br> $\bullet$ Learn the difference between FIR and IIR filters and apply them to an audio signal <br> $\bullet$ Explore the importance of group delay and magnitude responses <br> $\bullet$ Use the Design Filter live task to design their own filters <br>   |
 |      |       |
 
-## [**BuildFilteringApp.mlx**](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=Scripts/BuildFilteringApp.mlx)
+## [**BuildFilteringApp.m**](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design&project=DSP.prj&file=Scripts/BuildFilteringApp.m)
 |      |      |
 | :-- | :-- |
 | <img src="Images/image_6.png" width="231" alt="image_6.png"> <br>  | **In this script, students will...** <br> $\bullet$ Work step by step to build a filtering app <br>   |
@@ -77,7 +78,7 @@ MATLAB® is used throughout. Tools from Signal Processing Toolbox™ are used fr
 
 # License
 
-The license for this module is available in the [LICENSE.md](https://github.com/MathWorks-Teaching-Resources/Introduction-To-Digital-Signal-Processing/blob/release/LICENSE.md).
+The license for this module is available in the [LICENSE.md](https://github.com/MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design/blob/release/LICENSE.md).
 
 # Related Courseware Modules
 ## [Fourier Analysis](https://www.mathworks.com/matlabcentral/fileexchange/106725-fourier-analysis)
@@ -100,9 +101,9 @@ Or feel free to explore our other [modular courseware content](https://www.mathw
 
 # Contribute 
 
-Looking for more? Find an issue? Have a suggestion? Please contact the [MathWorks Educator Content Development Team](mailto:%20onlineteaching@mathworks.com). If you want to contribute directly to this project, you can find information about how to do so in the [CONTRIBUTING.md](https://github.com/MathWorks-Teaching-Resources/Introduction-To-Digital-Signal-Processing/blob/release/CONTRIBUTING.md) page on GitHub.
+Looking for more? Find an issue? Have a suggestion? Please contact the [MathWorks Educator Content Development Team](mailto:%20onlineteaching@mathworks.com). If you want to contribute directly to this project, you can find information about how to do so in the [CONTRIBUTING.md](https://github.com/MathWorks-Teaching-Resources/DSP-Signals-and-Filter-Design/blob/release/CONTRIBUTING.md) page on GitHub.
 
 
- *©* Copyright 2025 The MathWorks, Inc
+ *©* Copyright 2025-2026 The MathWorks, Inc
 
 
